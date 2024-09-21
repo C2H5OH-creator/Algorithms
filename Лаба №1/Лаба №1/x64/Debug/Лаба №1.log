@@ -1,0 +1,5 @@
+﻿  CustomList.cpp
+  Лаба №1.cpp
+  Generating Code...
+C:\Users\Admin\source\repos\Algorithms\Лаба №1\Лаба №1\CustomList.h(32,1): warning C4715: 'CustomList::GetValue': not all control paths return a value
+  Лаба №1.vcxproj -> C:\Users\Admin\source\repos\Algorithms\Лаба №1\x64\Debug\Лаба №1.exe
