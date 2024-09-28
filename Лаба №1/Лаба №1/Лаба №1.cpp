@@ -1,15 +1,15 @@
 ﻿#include <iostream>
 
-#include "CustomList.h"
+//#include "CustomList.h"
+#include "CustomVector.h"
+#include "CustomVector.cpp"
 
 int main() {
-    auto list = new CustomList();
+    CustomVector<int> intArray;
 
     for (int i = 0; i < 10; i++) {
-        list->PushBack(i + 15);
+        intArray.PushBack(i + 15);
     }
 
-    list->Print();
-    std::cout << list->GetValue(2);
-    list->Clear();
+    intArray.Print();
 }

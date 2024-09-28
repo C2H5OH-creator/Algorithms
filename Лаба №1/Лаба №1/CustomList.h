@@ -52,8 +52,8 @@ private:
 		Node* next;
 		Node* prev;
 
-		Node(const long double& data, Node* prev = nullptr, Node* next = nullptr)
-			: data(data), prev(prev), next(next) {}
+		Node(const long double& data, Node* prev = nullptr, Node* next = nullptr, size_t index = 0)
+			: data(data), prev(prev), next(next) , index(index){}
 	};
 	Node* head;
 	Node* tail;

@@ -11,7 +11,7 @@ void CustomList::PushFront(const long double& value) {
         head->prev = newNode;
         newNode->next = head;
         head = newNode;
-        // Обновляем индексы всех элементов
+       
         Node* current = head->next;
         while (current != nullptr) {
             current->index++;
@@ -39,9 +39,41 @@ void CustomList::PushBack(const long double& value) {
     size++;
 }
 
-void CustomList::PopFront() {};
+void CustomList::PopFront() {
+    if (head == nullptr) return;
 
-void CustomList::PopBack() {};
+    Node* temp = head;
+    head = head->next;
+
+    if (head != nullptr) {
+        head->prev = nullptr;
+     
+        Node* current = head;
+        while (current != nullptr) {
+            current->index--;
+            current = current->next;
+        }
+    }
+    else tail = nullptr;
+
+    delete temp;
+    size--;
+}
+
+void CustomList::PopBack() {
+    if (tail == nullptr) return;
+
+    Node* temp = tail;
+    tail = tail->prev;
+
+    if (tail != nullptr) {
+        tail->next = nullptr;
+    }
+    else head = nullptr;
+   
+    delete temp;
+    size--;
+}
 
 void CustomList::Clear() {
     while (tail) {

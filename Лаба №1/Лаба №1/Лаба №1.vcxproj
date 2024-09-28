@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CustomList.cpp" />
+    <ClCompile Include="CustomVector.cpp" />
     <ClCompile Include="Лаба №1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomList.h" />
+    <ClInclude Include="CustomVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
