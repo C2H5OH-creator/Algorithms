@@ -24,12 +24,18 @@
     <ClCompile Include="CustomVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CustomStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CustomVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

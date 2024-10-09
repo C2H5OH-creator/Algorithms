@@ -1,8 +1,8 @@
 #include "CustomList.h"
 
-void CustomList::PushFront(const long double& value) {
+template <typename T>
+void CustomList<T>::PushFront(const T& value) {
     Node* newNode = new Node(value);
-
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
@@ -11,7 +11,7 @@ void CustomList::PushFront(const long double& value) {
         head->prev = newNode;
         newNode->next = head;
         head = newNode;
-       
+
         Node* current = head->next;
         while (current != nullptr) {
             current->index++;
@@ -22,9 +22,9 @@ void CustomList::PushFront(const long double& value) {
     size++;
 }
 
-void CustomList::PushBack(const long double& value) {
+template <typename T>
+void CustomList<T>::PushBack(const T& value) {
     Node* newNode = new Node(value);
-
     if (tail == nullptr) {
         head = newNode;
         tail = newNode;
@@ -39,7 +39,8 @@ void CustomList::PushBack(const long double& value) {
     size++;
 }
 
-void CustomList::PopFront() {
+template <typename T>
+void CustomList<T>::PopFront() {
     if (head == nullptr) return;
 
     Node* temp = head;
@@ -47,20 +48,23 @@ void CustomList::PopFront() {
 
     if (head != nullptr) {
         head->prev = nullptr;
-     
+
         Node* current = head;
         while (current != nullptr) {
             current->index--;
             current = current->next;
         }
     }
-    else tail = nullptr;
+    else {
+        tail = nullptr;
+    }
 
     delete temp;
     size--;
 }
 
-void CustomList::PopBack() {
+template <typename T>
+void CustomList<T>::PopBack() {
     if (tail == nullptr) return;
 
     Node* temp = tail;
@@ -69,28 +73,32 @@ void CustomList::PopBack() {
     if (tail != nullptr) {
         tail->next = nullptr;
     }
-    else head = nullptr;
-   
+    else {
+        head = nullptr;
+    }
+
     delete temp;
     size--;
 }
 
-void CustomList::Clear() {
+template <typename T>
+void CustomList<T>::Clear() {
     while (tail) {
         Node* t_current = tail->prev;
         delete tail;
         tail = t_current;
         size--;
     }
-};
+}
 
-void CustomList::Print() const {
+template <typename T>
+void CustomList<T>::Print() const {
     Node* current = head;
     bool first = true;
     std::cout << "[";
-    for (size_t i = 0; i < size; i++, current = current->next){
+    for (size_t i = 0; i < size; i++, current = current->next) {
         if (first) { std::cout << " " << current->data; first = false; }
         else std::cout << ", " << current->data;
     }
     std::cout << " ]" << std::endl;
-};
+}
