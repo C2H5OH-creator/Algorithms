@@ -1,0 +1,5 @@
+﻿  Lab2.cpp
+C:\Users\nfmik\source\repos\Algorithms\Лаба №1\Lab2\Lab2.cpp(74,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nfmik\source\repos\Algorithms\Лаба №1\Lab2\Lab2.cpp(74,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\nfmik\source\repos\Algorithms\Лаба №1\Lab2\Lab2.cpp(74,30): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  Lab2.vcxproj -> C:\Users\nfmik\Source\Repos\Algorithms\Лаба №1\x64\Debug\Lab2.exe
