@@ -1,45 +1,67 @@
 ﻿#include <iostream>
 #include <vector>
-#include <climits> 
+#include <climits>
 #include <cmath>
+#include <stack>
+#include <algorithm>
 
-// Функция слияния двух отсортированных подмассивов
-void Merge(std::vector<int>& t_array, int p, int q, int r) {
-    std::vector<int> LEFT(t_array.begin() + p, t_array.begin() + q + 1);
-    std::vector<int> RIGHT(t_array.begin() + q + 1, t_array.begin() + r + 1);
+// Функция слияния с поддержкой режима галопа
+void Merge(std::vector<int>& array, int leftStart, int middle, int rightEnd) {
+    // Копируем левую и правую части исходного массива для слияния
+    std::vector<int> leftSubarray(array.begin() + leftStart, array.begin() + middle + 1);
+    std::vector<int> rightSubarray(array.begin() + middle + 1, array.begin() + rightEnd + 1);
 
-    LEFT.push_back(INT_MAX);
-    RIGHT.push_back(INT_MAX);
+    int leftIndex = 0;   // Текущая позиция в левом подмассиве
+    int rightIndex = 0;  // Текущая позиция в правом подмассиве
+    int mergeIndex = leftStart; // Индекс для слияния в исходном массиве
 
-    int left = 0;  // Индекс для LEFT
-    int right = 0;  // Индекс для RIGHT
-    int gallop_threshold = 4;  // Порог галопа, можно настраивать
+    int gallopThreshold = 7; // Порог для включения режима галопа
+    int leftGallopCount = 0; // Счётчик совпадений для включения галопа в левом подмассиве
+    int rightGallopCount = 0; // Счётчик совпадений для включения галопа в правом подмассиве
 
-    // Слияние с галопом
-    for (int k = p; k <= r; ++k) {
-        // Если элементы в левой части меньше или равны правой
-        if (LEFT[left] <= RIGHT[right]) {
-            // Проверяем возможность перехода в галоп
-            int gallop_count = 0;
-            while (gallop_count < gallop_threshold && LEFT[left] <= RIGHT[right]) {
-                t_array[k++] = LEFT[left++];
-                gallop_count++;
-            }
-            k--;  // Корректируем индекс после выхода из цикла
+    while (leftIndex < leftSubarray.size() && rightIndex < rightSubarray.size()) {
+        if (leftSubarray[leftIndex] <= rightSubarray[rightIndex]) {
+            array[mergeIndex++] = leftSubarray[leftIndex++];
+            leftGallopCount++;
+            rightGallopCount = 0;  // Сбросить счётчик для правого подмассива
         }
         else {
-            // Если элемент из правого массива меньше
-            int gallop_count = 0;
-            while (gallop_count < gallop_threshold && RIGHT[right] < LEFT[left]) {
-                t_array[k++] = RIGHT[right++];
-                gallop_count++;
-            }
-            k--;  // Корректируем индекс после выхода из цикла
+            array[mergeIndex++] = rightSubarray[rightIndex++];
+            rightGallopCount++;
+            leftGallopCount = 0;  // Сбросить счётчик для левого подмассива
         }
+
+        // Проверяем, нужно ли включить режим галопа для левого подмассива
+        if (leftGallopCount >= gallopThreshold) {
+            int rightLimitIndex = std::lower_bound(rightSubarray.begin() + rightIndex, rightSubarray.end(), leftSubarray[leftIndex]) - rightSubarray.begin();
+            while (rightIndex < rightLimitIndex) {
+                array[mergeIndex++] = rightSubarray[rightIndex++];
+            }
+            leftGallopCount = 0;  // Сбрасываем счётчик после режима галопа
+        }
+
+        // Проверяем, нужно ли включить режим галопа для правого подмассива
+        if (rightGallopCount >= gallopThreshold) {
+            int leftLimitIndex = std::lower_bound(leftSubarray.begin() + leftIndex, leftSubarray.end(), rightSubarray[rightIndex]) - leftSubarray.begin();
+            while (leftIndex < leftLimitIndex) {
+                array[mergeIndex++] = leftSubarray[leftIndex++];
+            }
+            rightGallopCount = 0;  // Сбрасываем счётчик после режима галопа
+        }
+    }
+
+    // Копируем оставшиеся элементы левого подмассива, если есть
+    while (leftIndex < leftSubarray.size()) {
+        array[mergeIndex++] = leftSubarray[leftIndex++];
+    }
+
+    // Копируем оставшиеся элементы правого подмассива, если есть
+    while (rightIndex < rightSubarray.size()) {
+        array[mergeIndex++] = rightSubarray[rightIndex++];
     }
 }
 
-// Подсчёт minrun
+// Функция для получения minrun
 size_t GetMinRun(size_t n) {
     size_t r = 0;
     while (n >= 64) {
@@ -49,53 +71,79 @@ size_t GetMinRun(size_t n) {
     return n + r;
 }
 
-// Сортировка вставками
+// Функция сортировки вставками
 template <typename T>
-void InsertionSort(std::vector<T>& array, size_t p, size_t r) {
-    for (size_t i = p + 1; i <= r; i++) {
-        T value = array[i];
-        size_t j = i - 1;
+void InsertionSort(std::vector<T>& array, size_t startIdx, size_t endIdx) {
+    for (size_t currentIdx = startIdx + 1; currentIdx <= endIdx; currentIdx++) {
+        T currentValue = array[currentIdx];
+        size_t positionIdx = currentIdx;
 
-        while (j >= p && array[j] > value) {
-            array[j + 1] = array[j];
-            j--;
+        // Перемещаем элементы, которые больше currentValue, на одну позицию вперёд
+        while (positionIdx > startIdx && array[positionIdx - 1] > currentValue) {
+            array[positionIdx] = array[positionIdx - 1];
+            positionIdx--;
         }
-        array[j + 1] = value;
+
+        // Вставляем currentValue на его правильное место
+        array[positionIdx] = currentValue;
     }
 }
 
-// Timsort: сортировка слиянием с вставками для маленьких подмассивов
+// Поиск run и его добавление в стек
+std::vector<std::pair<int, int>> IdentifyRuns(std::vector<int>& array, size_t minrun) {
+    std::vector<std::pair<int, int>> runs;
+    size_t i = 0;
+    while (i < array.size()) {
+        size_t run_start = i;
+        while (i + 1 < array.size() && array[i] <= array[i + 1]) {
+            i++;
+        }
+        while (i + 1 < array.size() && array[i] > array[i + 1]) {
+            i++;
+        }
+        size_t run_end = std::min(run_start + minrun - 1, array.size() - 1);
+        InsertionSort(array, run_start, run_end);
+        runs.emplace_back(run_start, run_end);
+        i = run_end + 1;
+    }
+    return runs;
+}
+
+// Основная функция Timsort
 template <typename T>
 void Timsort(std::vector<T>& array) {
     size_t array_len = array.size();
-    size_t minrun = GetMinRun(array_len);  // Получаем minrun для массива
+    size_t minrun = GetMinRun(array_len);
 
-    // Шаг 1: Сортировка вставками для маленьких подмассивов
-    for (size_t start = 0; start < array_len; start += minrun) {
-        size_t end = std::min(start + minrun - 1, array_len - 1);
-        InsertionSort(array, start, end);
-    }
+    // Шаг 1: Определяем run и сортируем их
+    auto runs = IdentifyRuns(array, minrun);
 
-    // Шаг 2: Слияние отсортированных подмассивов
-    for (size_t size = minrun; size < array_len; size *= 2) {
-        for (size_t start = 0; start < array_len; start += 2 * size) {
-            size_t mid = std::min(start + size - 1, array_len - 1);
-            size_t end = std::min(start + 2 * size - 1, array_len - 1);
-            if (mid < end) {
-                Merge(array, start, mid, end);
+    // Шаг 2: Слияние отсортированных run
+    while (runs.size() > 1) {
+        std::vector<std::pair<int, int>> new_runs;
+        for (size_t i = 0; i < runs.size(); i += 2) {
+            if (i + 1 < runs.size()) {
+                Merge(array, runs[i].first, runs[i].second, runs[i + 1].second);
+                new_runs.emplace_back(runs[i].first, runs[i + 1].second);
+            }
+            else {
+                new_runs.push_back(runs[i]);
             }
         }
+        runs = new_runs;
     }
 }
 
-int main()
-{
+int main() {
     std::vector<int> array;
     for (int i = 0; i < 15; i++) {
-        array.push_back(rand());
+        array.push_back(rand() % 10);  // генерируем массив случайных чисел
         printf("%d ", array[i]);
     }
     Timsort(array);
-    std::cout << std::endl << std::endl;
-    for (int i = 0; i < array.size(); i++) { printf("%d ", array[i]); }
+    std::cout << "\n\nОтсортированный массив:\n";
+    for (int i = 0; i < array.size(); i++) {
+        printf("%d ", array[i]);
+    }
+    return 0;
 }
