@@ -1,0 +1,9 @@
+Package: graphviz
+Version: 10.0.1
+Port-Version: 2
+Depends: cairo, expat, gdk-pixbuf, getopt, gts, libgd, librsvg, libwebp, pango, pkgconf, vcpkg-cmake, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5ce40628e89c13769fbf4e54c61bc7535e4441fd461993507a6fce11c03c78e5
+Description: Graph Visualization Tools
+Status: install ok half-installed

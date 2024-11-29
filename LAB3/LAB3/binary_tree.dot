@@ -1,0 +1,17 @@
+digraph Tree {
+    Узел1 [label="Узел1", color="lightblue", style=filled, fillcolor="lightblue"];
+    Узел2 [label="Узел2", color="lightblue", style=filled, fillcolor="lightblue"];
+    Узел1 -> Узел2;
+    Узел3 [label="Узел3", color="lightblue", style=filled, fillcolor="lightblue"];
+    Узел2 -> Узел3;
+    Узел4 [label="Узел4", color="lightgreen", style=filled, fillcolor="lightgreen"];
+    Узел3 -> Узел4;
+    Узел5 [label="Узел5", color="lightgreen", style=filled, fillcolor="lightgreen"];
+    Узел3 -> Узел5;
+    Узел6 [label="Узел6", color="lightblue", style=filled, fillcolor="lightblue"];
+    Узел2 -> Узел6;
+    Узел7 [label="Узел7", color="lightgreen", style=filled, fillcolor="lightgreen"];
+    Узел6 -> Узел7;
+    Узел8 [label="Узел8", color="lightgreen", style=filled, fillcolor="lightgreen"];
+    Узел6 -> Узел8;
+}

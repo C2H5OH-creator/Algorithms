@@ -1,0 +1,7 @@
+Package: libgd
+Feature: jpeg
+Depends: libjpeg-turbo
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support for JPEG
+Status: install ok half-installed

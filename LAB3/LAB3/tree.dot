@@ -1,0 +1,9 @@
+digraph Tree {
+    Root [label="Root"];
+    Child1 [label="Child 1"];
+    Child2 [label="Child 2"];
+    Grandchild [label="Grandchild"];
+    Root -> Child1;
+    Root -> Child2;
+    Child1 -> Grandchild;
+}

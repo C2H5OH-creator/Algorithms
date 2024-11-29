@@ -1,0 +1,9 @@
+Package: libcroco
+Version: 0.6.13
+Port-Version: 7
+Depends: glib, libxml2, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 462f4e314909821f5feebf07fc2760a4642b6bfdf5e73ba24130ef9169758eb7
+Description: A standalone css2 parsing and manipulation library
+Status: install ok installed

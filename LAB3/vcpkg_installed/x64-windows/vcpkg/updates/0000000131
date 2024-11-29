@@ -1,0 +1,7 @@
+Package: libgd
+Feature: tiff
+Depends: tiff
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support for TIFF
+Status: install ok half-installed
