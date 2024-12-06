@@ -1,0 +1,47 @@
+﻿  Lab2.cpp
+C:\Users\Admin\source\repos\Algorithms\Lab2\Lab2.cpp(36,33): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\Admin\source\repos\Algorithms\Lab2\Lab2.cpp(45,32): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4267: 'initializing': conversion from 'size_t' to '_Ty1', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4267:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4267:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4267:             _Ty1=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4267:         ]
+  (compiling source file 'Lab2.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\Admin\source\repos\Algorithms\Lab2\Lab2.cpp(106,14):
+          see reference to function template instantiation 'void std::vector<std::pair<int,int>,std::allocator<std::pair<int,int>>>::emplace_back<size_t&,size_t&>(size_t &,size_t &)' being compiled
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(858,24):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<size_t&,size_t&>(size_t &,size_t &)' being compiled
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(776,20):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<size_t&,size_t&>(size_t &,size_t &)' being compiled
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(791,13):
+          see reference to function template instantiation 'void std::_Construct_in_place<std::pair<int,int>,size_t&,size_t&>(_Ty &,size_t &,size_t &) noexcept' being compiled
+          with
+          [
+              _Ty=std::pair<int,int>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xutility(403,61):
+          see reference to function template instantiation 'std::pair<int,int>::pair<size_t&,size_t&,0>(_Other1,_Other2) noexcept' being compiled
+          with
+          [
+              _Other1=size_t &,
+              _Other2=size_t &
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,54): warning C4267: 'initializing': conversion from 'size_t' to '_Ty2', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,54): warning C4267:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,54): warning C4267:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,54): warning C4267:             _Ty2=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,54): warning C4267:         ]
+  (compiling source file 'Lab2.cpp')
+  
+  Lab2.vcxproj -> C:\Users\Admin\source\repos\Algorithms\Lab2\x64\Debug\Lab2.exe
