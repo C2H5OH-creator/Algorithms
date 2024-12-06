@@ -1,0 +1,18 @@
+digraph Tree {
+    node [style=filled, fontcolor=black, color=black];
+    Node_1 [label="28", fillcolor="lightblue"];
+    Node_1 -> Node_2;
+    Node_2 [label="20", fillcolor="lightblue"];
+    Node_2 -> Node_3;
+    Node_3 [label="15", fillcolor="lightblue"];
+    Node_3 -> Node_4;
+    Node_4 [label="10", fillcolor="lightblue"];
+    Node_3 -> Node_5;
+    Node_5 [label="18", fillcolor="lightblue"];
+    Node_2 -> Node_6;
+    Node_6 [label="22", fillcolor="lightblue"];
+    Node_1 -> Node_7;
+    Node_7 [label="30", fillcolor="lightblue"];
+    Node_7 -> Node_8;
+    Node_8 [label="35", fillcolor="lightblue"];
+}
