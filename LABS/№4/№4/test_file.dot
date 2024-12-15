@@ -1,0 +1,8 @@
+digraph G {
+  "A";
+  "B";
+  "C";
+  "A" -> "B" [label="3"];
+  "A" -> "C" [label="1"];
+  "B" -> "C" [label="2"];
+}
