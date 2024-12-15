@@ -1,8 +1,17 @@
-digraph G {
+graph G {
   "A";
   "B";
   "C";
-  "A" -> "B" [label="3"];
-  "A" -> "C" [label="1"];
-  "B" -> "C" [label="2"];
+  "D";
+  "E";
+  "F";
+  "A" -- "B" [label="2"];
+  "A" -- "D" [label="6"];
+  "B" -- "C" [label="3"];
+  "B" -- "D" [label="8"];
+  "B" -- "E" [label="5"];
+  "C" -- "E" [label="7"];
+  "C" -- "F" [label="4"];
+  "D" -- "F" [label="2"];
+  "E" -- "F" [label="3"];
 }

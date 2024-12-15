@@ -1,0 +1,11 @@
+graph MST {
+  "A";
+  "B";
+  "C";
+  "D";
+  "E";
+  "A" -- "C" [label="2"];
+  "B" -- "D" [label="3"];
+  "A" -- "B" [label="4"];
+  "C" -- "E" [label="4"];
+}

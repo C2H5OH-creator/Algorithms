@@ -16,6 +16,8 @@ public:
     //Получение веса ребра
     int getValue(size_t row, size_t col) const; 
 
+    size_t getSize() const { return matrix.size(); }
+
     //Изменение размера матрицы
     void resize(size_t size);
 

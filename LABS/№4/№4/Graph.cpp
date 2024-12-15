@@ -45,14 +45,17 @@ void Graph::printGraph() const {
     matrix.print();
 }
 
-// Функция для создания .dot файла
-void Graph::createDotFile(const std::string& dotFile) const {
+// Функция для создания .dot файла (неориентированный граф)
+void Graph::createDotFile(const std::string& fileName) const {
+
+    std::string dotFile = fileName + ".dot";
+
     std::ofstream file(dotFile);
     if (!file.is_open()) {
-        throw std::runtime_error("Unable to open file for writing: " + dotFile);
+        throw std::runtime_error("Не удалось открыть файл для записи: " + dotFile);
     }
 
-    file << "digraph G {\n"; // Начало графа (направленный граф)
+    file << "graph G {\n"; // Начало графа (неориентированный граф)
 
     // Добавляем вершины
     for (std::map<int, std::string>::const_iterator it = names.begin(); it != names.end(); ++it) {
@@ -64,18 +67,53 @@ void Graph::createDotFile(const std::string& dotFile) const {
         for (int j = i + 1; j < names.size(); ++j) {
             int weight = matrix.getValue(i, j);
             if (weight > 0) {  // Если есть ребро (вес > 0)
-                file << "  \"" << names.at(i) << "\" -> \"" << names.at(j) << "\" [label=\"" << weight << "\"];\n";
+                file << "  \"" << names.at(i) << "\" -- \"" << names.at(j) << "\" [label=\"" << weight << "\"];\n";
             }
         }
     }
 
     file << "}\n";  // Конец графа
 
-    std::cout << "DOT file created: " << dotFile << "\n";
+    std::cout << "DOT-файл создан: " << dotFile << "\n";
+}
+
+// Функция для создания .dot файла для MST
+void Graph::createMSTDotFile(const std::string& fileName) {
+
+    std::string dotFile = fileName + ".dot";
+
+    // Выполняем алгоритм Краскала для получения рёбер MST
+    std::vector<UnionFind::Edge> mstEdges = kruskal();
+
+    std::ofstream file(dotFile);
+    if (!file.is_open()) {
+        throw std::runtime_error("Не удалось открыть файл для записи: " + dotFile);
+    }
+
+    file << "graph MST {\n"; // Начало графа (неориентированный граф)
+
+    // Добавляем вершины
+    for (std::map<int, std::string>::const_iterator it = names.begin(); it != names.end(); ++it) {
+        file << "  \"" << it->second << "\";\n";
+    }
+
+
+    // Добавляем рёбра MST с весами
+    for (const auto& edge : mstEdges) {
+        file << "  \"" << names.at(edge.u) << "\" -- \"" << names.at(edge.v)
+            << "\" [label=\"" << edge.weight << "\"];\n";
+    }
+
+    file << "}\n"; // Конец графа
+
+    std::cout << "MST-DOT-файл создан: " << dotFile << "\n";
 }
 
 // Функция для рендеринга графа в изображение
-void Graph::renderGraph(const std::string& dotFile, const std::string& outputFile) {
+void Graph::renderGraph(const std::string& filesName, const std::string& outputFileExtention) {
+    std::string dotFile = filesName + ".dot";
+    std::string outputFile = filesName + "." + outputFileExtention;
+    
     std::string command = "dot -Tsvg " + dotFile + " -o " + outputFile;
     int result = std::system(command.c_str());
     if (result != 0) {
@@ -84,4 +122,50 @@ void Graph::renderGraph(const std::string& dotFile, const std::string& outputFil
     else {
         std::cout << "Граф сохранён в " << outputFile << "\n";
     }
+}
+
+// Добавление метода для извлечения рёбер из графа
+std::vector<UnionFind::Edge> Graph::getEdges() const {
+    std::vector<UnionFind::Edge> edges;
+
+    // Проходим по всем элементам матрицы смежности
+    for (size_t i = 0; i < matrix.getSize(); i++) {
+        for (size_t j = i + 1; j < matrix.getSize(); j++) { // Только верхняя треугольная часть
+            int weight = matrix.getValue(i, j);
+            if (weight > 0) {
+                edges.emplace_back(i, j, weight); // Добавляем ребро (u, v, вес)
+            }
+        }
+    }
+    return edges;
+}
+
+// Алгоритм Краскала
+std::vector<UnionFind::Edge> Graph::kruskal() {
+
+    // Получаем все рёбра графа
+    std::vector<UnionFind::Edge> edges = Graph::getEdges();
+
+    // Сортируем рёбра по возрастанию веса
+    std::sort(edges.begin(), edges.end(), UnionFind::compareEdges);
+
+    // Инициализируем Union-Find
+    UnionFind uf(matrix.getSize());
+
+    std::vector<UnionFind::Edge> mst; // Результирующее минимальное остовное дерево
+
+    for (const UnionFind::Edge& edge : edges) {
+        // Если вершины не принадлежат одному множеству, добавляем ребро
+        if (uf.find(edge.u) != uf.find(edge.v)) {
+            mst.push_back(edge);
+            uf.unite(edge.u, edge.v);
+        }
+
+        // Если количество рёбер в дереве равно n-1, завершаем
+        if (mst.size() == matrix.getSize() - 1) {
+            break;
+        }
+    }
+
+    return mst;
 }

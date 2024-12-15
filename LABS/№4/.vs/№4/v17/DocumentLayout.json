@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,16 +15,20 @@
       "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\AdjacencyMatrix.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\AdjacencyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\AdjacencyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\UnionFind.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\AdjacencyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\AdjacencyMatrix.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6AAEE8AA-BAB7-40C1-8F69-E26743645660}|\u21164\\\u21164.vcxproj|solutionrelative:\u21164\\UnionFind.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,20 +46,50 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UnionFind.cpp",
+              "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.cpp",
+              "RelativeDocumentMoniker": "\u21164\\UnionFind.cpp",
+              "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.cpp",
+              "RelativeToolTip": "\u21164\\UnionFind.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-15T21:55:59.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "UnionFind.h",
+              "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.h",
+              "RelativeDocumentMoniker": "\u21164\\UnionFind.h",
+              "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\UnionFind.h",
+              "RelativeToolTip": "\u21164\\UnionFind.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-15T21:49:16.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Graph.cpp",
               "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.cpp",
               "RelativeDocumentMoniker": "\u21164\\Graph.cpp",
               "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.cpp",
               "RelativeToolTip": "\u21164\\Graph.cpp",
-              "ViewState": "AgIAADAAAAAAAAAAAAAhwEAAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-15T15:49:07.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AdjacencyMatrix.cpp",
               "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\AdjacencyMatrix.cpp",
               "RelativeDocumentMoniker": "\u21164\\AdjacencyMatrix.cpp",
@@ -64,13 +102,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdjacencyMatrix.h",
               "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\AdjacencyMatrix.h",
               "RelativeDocumentMoniker": "\u21164\\AdjacencyMatrix.h",
               "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\AdjacencyMatrix.h",
               "RelativeToolTip": "\u21164\\AdjacencyMatrix.h",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-15T15:34:28.69Z",
               "EditorCaption": ""
@@ -83,27 +121,23 @@
               "RelativeDocumentMoniker": "\u21164\\Graph.h",
               "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\Graph.h",
               "RelativeToolTip": "\u21164\\Graph.h",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-15T15:27:35.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\main.cpp",
               "RelativeDocumentMoniker": "\u21164\\main.cpp",
               "ToolTip": "E:\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\#GitReps\\Algorithms\\LABS\\\u21164\\\u21164\\main.cpp",
               "RelativeToolTip": "\u21164\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-15T15:27:20.199Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
