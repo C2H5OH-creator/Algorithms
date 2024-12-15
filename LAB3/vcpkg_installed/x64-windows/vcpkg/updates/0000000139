@@ -1,7 +1,0 @@
-Package: libgd
-Feature: webp
-Depends: libwebp
-Architecture: x64-windows
-Multi-Arch: same
-Description: Support for WebP
-Status: install ok installed

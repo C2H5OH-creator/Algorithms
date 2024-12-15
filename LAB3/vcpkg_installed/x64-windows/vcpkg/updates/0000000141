@@ -1,9 +1,0 @@
-Package: gts
-Version: 0.7.6
-Port-Version: 9
-Depends: glib, vcpkg-cmake
-Architecture: x64-windows
-Multi-Arch: same
-Abi: e8d7d8ca5ea6434afcd2b96d9fc7b9c484004f8c798e826354ef6f6064fdbd3d
-Description: 3D surfaces meshed with interconnected triangles
-Status: install ok installed

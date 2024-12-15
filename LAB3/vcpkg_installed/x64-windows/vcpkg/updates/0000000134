@@ -1,7 +1,0 @@
-Package: libgd
-Feature: fontconfig
-Depends: fontconfig
-Architecture: x64-windows
-Multi-Arch: same
-Description: Support for Fontconfig
-Status: install ok installed

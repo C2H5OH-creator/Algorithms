@@ -1,7 +1,0 @@
-Package: libgd
-Feature: png
-Depends: libpng, zlib
-Architecture: x64-windows
-Multi-Arch: same
-Description: Support for PNG
-Status: install ok half-installed

@@ -1,9 +1,0 @@
-Package: librsvg
-Version: 2.40.20
-Port-Version: 11
-Depends: cairo, fontconfig, gdk-pixbuf, glib, libcroco, libxml2, pango, vcpkg-cmake
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 64c173f9cf071fb3b822b2a14089ef429f926c37364f35e38f0be31f7186e76e
-Description: A small library to render Scalable Vector Graphics (SVG)
-Status: install ok installed
