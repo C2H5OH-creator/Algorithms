@@ -2,7 +2,7 @@
 
 int UnionFind::find(int x) {
     if (parent[x] != x) {
-        parent[x] = find(parent[x]); // Компрессия пути
+        parent[x] = find(parent[x]);
     }
     return parent[x];
 }

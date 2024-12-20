@@ -8,12 +8,14 @@
 #include <sstream>
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 
 class Graph
 {
 public:
 
+    // Конструкторы
     Graph() = default;
     Graph(const std::string& input_conf_file_name) { loadFromFile(input_conf_file_name); };
 
@@ -37,6 +39,14 @@ public:
 
     // Алгоритм Краскала
     std::vector<UnionFind::Edge> kruskal();
+
+    // Обход в глубину
+    void bfs(size_t start);
+
+    //Обход в ширину
+    void dfsRecursive(size_t current, std::vector<bool>& visited);
+
+    void dfs(size_t start);
 
 private:
 

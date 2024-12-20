@@ -12,14 +12,17 @@ public:
         Edge(int u, int v, int weight) : u(u), v(v), weight(weight) {}
     };
 
+    // Конструктор
     UnionFind(int n) {
         parent.resize(n);
         rank.resize(n, 0);
         for (int i = 0; i < n; i++) parent[i] = i;
     }
 
+    // Поиск элемента в множестве
     int find(int x);
 
+    // Объединение двух множеств
     void unite(int x, int y);
 
     // Сортировка рёбер по весу

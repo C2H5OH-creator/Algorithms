@@ -169,3 +169,58 @@ std::vector<UnionFind::Edge> Graph::kruskal() {
 
     return mst;
 }
+
+// Обход в ширину
+void Graph::bfs(size_t start) {
+    size_t size = matrix.getSize();
+
+    if (start >= size) {
+        throw std::out_of_range("Начальная вершина выходит за пределы графа");
+    }
+
+    std::vector<bool> visited(size, false); // Массив посещённых вершин
+    std::queue<size_t> q; // Очередь для BFS
+
+    visited[start] = true; // Отмечаем начальную вершину как посещённую
+    q.push(start); // Добавляем её в очередь
+
+    while (!q.empty()) {
+        size_t current = q.front();
+        q.pop();
+
+        std::cout << "Посещена вершина: " << current << std::endl;
+
+        // Обходим соседей текущей вершины
+        for (size_t neighbor = 0; neighbor < size; ++neighbor) {
+            if (matrix.getValue(current, neighbor) != 0 && !visited[neighbor]) {
+                visited[neighbor] = true; // Помечаем вершину как посещённую
+                q.push(neighbor); // Добавляем её в очередь
+            }
+        }
+    }
+}
+
+// Обход в глубину
+void Graph::dfsRecursive(size_t current, std::vector<bool>& visited) {
+    // Пометить текущую вершину как посещённую
+    visited[current] = true;
+    std::cout << "Посещена вершина: " << current << std::endl;
+
+    // Рекурсивно посещаем соседей
+    for (size_t neighbor = 0; neighbor < matrix.getSize(); ++neighbor) {
+        if (matrix.getValue(current, neighbor) != 0 && !visited[neighbor]) {
+            dfsRecursive(neighbor, visited);
+        }
+    }
+}
+
+void Graph::dfs(size_t start) {
+    size_t size = matrix.getSize();
+
+    if (start >= size) {
+        throw std::out_of_range("Начальная вершина выходит за пределы графа");
+    }
+
+    std::vector<bool> visited(size, false); // Массив посещённых вершин
+    dfsRecursive(start, visited);
+}
